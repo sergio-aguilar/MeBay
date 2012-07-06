@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+	<title>All Ads</title>
+</head>
+<body>
+<h1>All Ads</h1>
+<% @ads.each do |ad| %>
+  <ul>
+		<li>
+			<a href="/ads/<%= ad.id %>"><%= ad.name %></a>
+		</li>
+	</ul>
+<% end %>
+
+</body>
+</html>
