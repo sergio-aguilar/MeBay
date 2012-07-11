@@ -1,5 +1,5 @@
 class AdsController < ApplicationController
-  http_basic_authenticate_with :name => "sergio", :password => "123", :only => [:edit, :update]
+  http_basic_authenticate_with :name => "sergio", :password => "123", :only => [:edit, :update, :destroy]
   
   def index
     @ads = Ad.all
@@ -27,5 +27,12 @@ class AdsController < ApplicationController
     @ad = Ad.find(params[:id])
     @ad.update_attributes(params[:ad])
     redirect_to @ad, notice: "Ad was successfully updated"
+  end
+  
+  def destroy
+    @ad = Ad.find(params[:id])
+    @ad.destroy
+    
+    redirect_to ads_url
   end
 end

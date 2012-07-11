@@ -3,6 +3,7 @@
   <ul>
 		<li>			
 			<%= link_to ad.name, ad %>
+			<%= link_to "Delete", ad, confirm: "Are you sure?", method: :delete %>
 		</li>
 	</ul>
 <% end %>
