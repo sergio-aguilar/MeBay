@@ -1,4 +1,6 @@
 class AdsController < ApplicationController
+  http_basic_authenticate_with :name => "sergio", :password => "123", :only => [:edit, :update]
+  
   def index
     @ads = Ad.all
   end
