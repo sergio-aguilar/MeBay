@@ -1,8 +1,8 @@
 <h1>All Ads</h1>
 <% @ads.each do |ad| %>
   <ul>
-		<li>
-			<a href = "/ads/<%= ad.id %>"><%= ad.name %></a>
+		<li>			
+			<%= link_to ad.name, ad %>
 		</li>
 	</ul>
 <% end %>

@@ -58,8 +58,9 @@ HeadfirstMebay::Application.routes.draw do
   
   
   #map.connect '/ads/:id', :controller=>'ads', :action=>'show'
-  match 'ads/new' => 'Ads#new'
-  match 'ads/create' => 'Ads#create'
-  match "ads" => "Ads#index"
-  match "ads/:id" => "Ads#show"
+  #match 'ads/new' => 'Ads#new'
+  #match 'ads/create' => 'Ads#create'
+  #match "ads" => "Ads#index"
+  #match "ads/:id" => "Ads#show"
+  resources :ads
 end
