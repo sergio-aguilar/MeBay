@@ -15,8 +15,12 @@ class AdsController < ApplicationController
   
   def create
     @ad = Ad.new(params[:ad])
-    @ad.save
-    redirect_to @ad, notice: "Ad was successfully created."
+    
+    if @ad.save
+      redirect_to @ad, notice: "Ad was successfully created."
+    else
+      render action: 'new'
+    end
   end
   
   def edit
